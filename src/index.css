@@ -1,5 +1,5 @@
 @font-face {
-  src: url(./fonts/Roboto.woff);
+  src: url(./fonts/Roboto-Regular.ttf);
   font-family: "Roboto";
 }
 
@@ -21,7 +21,7 @@ ul {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto" sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f0f1f3;
