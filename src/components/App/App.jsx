@@ -3,10 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import Reviews from "../Reviews/Reviews";
 import AboutMe from "../AboutMe/AboutMe";
-import AboutUs from "../AboutUs/AboutUs";
 import Contact from "../AboutMe/Contact";
 import Hobbies from "../AboutMe/Hobbies";
 import MyStory from "../AboutMe/MyStory";
+import AboutUs from "../AboutUs/AboutUs";
+import SiteHistory from "../AboutUs/SiteHistory";
+import SiteMission from "../AboutUs/SiteMission";
 import "./App.css";
 
 function App() {
@@ -21,7 +23,10 @@ function App() {
           <Route path="hobbies" element={<Hobbies />} />
           <Route path="my-story" element={<MyStory />} />
         </Route>
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />}>
+          <Route path="site-history" element={<SiteHistory />} />
+          <Route path="site-mission" element={<SiteMission />} />
+        </Route>
       </Routes>
     </div>
   );
