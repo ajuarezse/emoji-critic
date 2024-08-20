@@ -1,3 +1,5 @@
+import "./App.css";
+import { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
@@ -9,14 +11,27 @@ import MyStory from "../AboutMe/MyStory";
 import AboutUs from "../AboutUs/AboutUs";
 import SiteHistory from "../AboutUs/SiteHistory";
 import SiteMission from "../AboutUs/SiteMission";
-import "./App.css";
 
 function App() {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.nomoreparties.co/emoji-critic-ens")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setReviews(data);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/about-me" element={<AboutMe />}>
           <Route path="contact" element={<Contact />} />
