@@ -11,6 +11,7 @@ import MyStory from "../AboutMe/MyStory";
 import AboutUs from "../AboutUs/AboutUs";
 import SiteHistory from "../AboutUs/SiteHistory";
 import SiteMission from "../AboutUs/SiteMission";
+import Review from "../Review/Review";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -32,6 +33,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
+        <Route
+          path="/reviews/:reviewId"
+          element={<Review reviews={reviews} />}
+        />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/about-me" element={<AboutMe />}>
           <Route path="contact" element={<Contact />} />
